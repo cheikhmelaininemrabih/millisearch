@@ -4,14 +4,25 @@ import SearchResults from '../components/SearchResults';
 
 const Home = () => {
   const [results, setResults] = useState([]);
+  const [history, setHistory] = useState(
+    JSON.parse(localStorage.getItem('searchHistory')) || []
+  );
 
   return (
-    <div className="p-4">
-      <h1 className="text-center text-4xl mb-4">Search Quest</h1>
+    <div>
+      <h3 className="text-lg font-bold">Search History</h3>
+      <ul>
+        {history.map((item, index) => (
+          <li key={index} className="text-gray-700 dark:text-gray-300">
+            {item}
+          </li>
+        ))}
+      </ul>
       <SearchBar setResults={setResults} />
       <SearchResults results={results} />
     </div>
   );
 };
+
 
 export default Home;
