@@ -1,28 +1,23 @@
 import React, { useState } from 'react';
 import SearchBar from '../components/SearchBar';
 import SearchResults from '../components/SearchResults';
+import Chatbot from '../components/Chatbot';
 
 const Home = () => {
   const [results, setResults] = useState([]);
-  const [history, setHistory] = useState(
-    JSON.parse(localStorage.getItem('searchHistory')) || []
-  );
 
   return (
-    <div>
-      <h3 className="text-lg font-bold">Search History</h3>
-      <ul>
-        {history.map((item, index) => (
-          <li key={index} className="text-gray-700 dark:text-gray-300">
-            {item}
-          </li>
-        ))}
-      </ul>
-      <SearchBar setResults={setResults} />
-      <SearchResults results={results} />
+    <div className="flex justify-center h-screen pt-10 bg-gray-100">
+      <div className="text-center">
+        <h1 className="text-4xl mb-4">Search Quest about Race for Water</h1>
+        <SearchBar setResults={setResults} />
+        <SearchResults results={results} />
+        
+        {/* Add the Chatbot here */}
+        <Chatbot />
+      </div>
     </div>
   );
 };
-
 
 export default Home;
