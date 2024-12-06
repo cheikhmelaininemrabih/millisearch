@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ocean-themed background gradient */
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #00aaff, #004f8d);
+  color: #fff;
+  transition: all 0.3s ease;
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #00ffcc;
+}
+
+button {
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Smooth transition for background on dark mode toggle */
+body.dark {
+  background: linear-gradient(135deg, #003f6b, #001a2e);
+}
+
+/* Animation for floating elements like icons */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Button hover effect */
+button:hover {
+  background-color: #00ffcc;
+  transform: scale(1.05);
+}
+
+/* Page title hover animation */
+h1:hover {
+  transform: scale(1.1);
+  color: #00ffcc;
+}
